@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "rpg-test"
+    }
+  },
+  "defaultProject": "rpg-test",
+  "cli": {
+    "analytics": "2810e530-3ea4-4a2b-b620-579026e46ea6"
+  }
 }
