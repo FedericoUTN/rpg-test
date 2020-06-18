@@ -15,7 +15,7 @@ export class heroe {
         agility : number,
         magic : number
     };
-    state : estados;
+    state : estados = estados.good;
     skillSlot : number = this.calcSkillSlot() ;         //cuanto slots de skills tiene disponible
 
     calcSkillSlot(){            //devuelve cada 3 niveles, un slot mas, comienza en 1, los magos cada 2

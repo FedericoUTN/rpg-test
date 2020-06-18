@@ -10,7 +10,7 @@ export class enemy {
     power : number;     //poder del enemigo
     armor : number;     //resistencia al daño
     rarity : rareza;
-    state : estados;
+    state : estados = estados.good;
     changeState(estado : estados){      //cambia al estado pasado por parametro
         this.state = estado
     }

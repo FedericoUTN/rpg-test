@@ -4,7 +4,8 @@ export class item {
     name : string;
     description : string;
     rarity : itemRarity;
-    imgURL : string;   
+    imgURL : string; 
+    value : number;         //cuanto vale el item  
 }
 export class potion extends item {
     power : number;       //indica cuanto afecta

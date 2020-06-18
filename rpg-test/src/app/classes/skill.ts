@@ -10,8 +10,8 @@ export class skill {
     modifier : number;      //modificador del skill x stat
     level : number;         //es el nivel de skill
     maxLvl : number;        //nivel maximo del skill
-    type : skillType;
-    effect? : effectType;
+    type : skillType;       
+    effect? : effectType;      //efecto del skill
 
     canUseSkill(mp : number):boolean{           //devuelve true si puede usar skill
         if(mp > this.mpUsed){return true;}
