@@ -1,0 +1,13 @@
+    .grid-item {
+        border: 1px solid;
+        text-align: center;
+        padding: 1rem;
+        font-size: 2rem;
+    }
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: 100px 100px 100px; //permite decirle a css de uqe tamaño es cada grid-item x columna
+        grid-template-rows: 100px 100px 100px; //permite decirle a css de uqe tamaño es cada grid-item x filas
+        grid-gap: 15px; //distancia entre cell
+    }

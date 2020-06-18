@@ -1,12 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { app_routing } from './app-routing.module';
+//rutas
+
+
+//component
 import { AppComponent } from './app.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { ActionMenuComponent } from './action-menu/action-menu.component';
+import { WorldComponent } from './world/world.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +19,13 @@ import { ActionMenuComponent } from './action-menu/action-menu.component';
     PrincipalComponent,
     HeaderMenuComponent,
     FooterComponent,
-    ActionMenuComponent
+    ActionMenuComponent,
+    WorldComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    // AppRoutingModule
+    app_routing
   ],
   providers: [],
   bootstrap: [AppComponent]
