@@ -9,7 +9,7 @@ export class WorldComponent implements OnInit {
 
   grid : string[]
   constructor() {
-    this.grid = ['A','B','C','D','E','F','G','H','I']
+    this.grid = ['<^','^','^>','<','R','>','<v','v','v>']
    }
 
   ngOnInit(): void {
