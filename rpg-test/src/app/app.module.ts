@@ -12,6 +12,7 @@ import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { ActionMenuComponent } from './action-menu/action-menu.component';
 import { WorldComponent } from './world/world.component';
+import { CombatComponent } from './combat/combat.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { WorldComponent } from './world/world.component';
     HeaderMenuComponent,
     FooterComponent,
     ActionMenuComponent,
-    WorldComponent
+    WorldComponent,
+    CombatComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
+import { item } from './item';
+
 //clase base para cualquier heroe
-export class heroe {
+export class Heroe {
     id : number;
     name : string;
     class : clases;
@@ -38,6 +40,9 @@ export class heroe {
     changeState(estado : estados){      //cambia al estado pasado por parametro
         this.state = estado
     }
+    calcArmor(armadura : item):number{
+        return Math.floor(this.stats.vitality / 3);
+    }
 
 }
 export enum estados {
@@ -47,7 +52,7 @@ export enum estados {
     stunned,
     dead
 }
-enum clases {
+export enum clases {
     warrior = 0,
     ranger,
     mage
