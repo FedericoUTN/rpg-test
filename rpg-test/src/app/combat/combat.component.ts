@@ -10,6 +10,9 @@ import { CombatIAService } from 'src/app/services/combat-ia.service';
 export class CombatComponent implements OnInit {
 
   constructor(private combatIA : CombatIAService) { }
+  combateTest(){
+    this.combatIA.turno()
+  }
 
   ngOnInit(): void {
   }

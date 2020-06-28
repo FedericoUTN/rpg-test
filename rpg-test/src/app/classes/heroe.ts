@@ -1,24 +1,35 @@
 import { item } from './item';
 
+
 //clase base para cualquier heroe
 export class Heroe {
-    id : number;
-    name : string;
-    class : clases;
-    hp : number;
-    mp : number;
-    experience : number;
-    level : number = 1;
-    expReq : number = this.calcExpReq(this.level);
-    stats : {
+    constructor(public id : number, public name : string, public clase : clases, public hp : number, public mp : number, public level : number, public experience : number, public state : estados, 
+        public _str : number, public _vit : number, public _dex : number, public _agi : number, public _mag : number ){
+
+           
+            
+         
+    }
+    
+   
+    public stats : {
         strength : number,
         vitality : number,
         dextery : number,
         agility : number,
         magic : number
     };
-    state : estados = estados.good;
-    skillSlot : number = this.calcSkillSlot() ;         //cuanto slots de skills tiene disponible
+    private expReq : number;
+    private skillSlot : number;
+
+     
+            //cuanto slots de skills tiene disponible
+
+    preLlenado(){           ///codigo de prueba
+        this.expReq = this.calcExpReq(this.level);
+        this.skillSlot = this.calcSkillSlot()
+
+    }
 
     calcSkillSlot(){            //devuelve cada 3 niveles, un slot mas, comienza en 1, los magos cada 2
         if(!clases.mage)

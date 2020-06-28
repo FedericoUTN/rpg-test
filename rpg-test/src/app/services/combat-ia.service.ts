@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Heroe, clases } from 'src/app/classes/heroe';
-import { enemy } from 'src/app/classes/enemy';
+import { Heroe, clases, estados } from 'src/app/classes/heroe';
+import { Enemy } from 'src/app/classes/enemy';
 import { item } from '../classes/item';
 
 
@@ -9,14 +9,14 @@ import { item } from '../classes/item';
 })
 export class CombatIAService {
 heroe : Heroe;
-enemy : enemy[];
+enemy : Enemy[] = [];
 enemyCurrentID : number;
 setArmor : item;
 setWeapon : item;
-turnos : number [];
+turnos : number [] = [];
 
   constructor() { }
-  damageToEnemy(pow : number, malo : enemy):number{
+  damageToEnemy(pow : number, malo : Enemy):number{
     return (malo.armor - pow);
   }
   damageToHeroe(pow : number, bueno : Heroe):number{
@@ -36,7 +36,7 @@ turnos : number [];
   };
 
   speedByClass(): number{     //velocidad base por clase
-    let clase = this.heroe.class;
+    let clase = this.heroe.clase;
     switch(clase){
       case clases.mage :{
         return 20;
@@ -57,7 +57,7 @@ turnos : number [];
   }
 
   turnOrder(){      //calcular en un ciclo de 100, los turnos siguientes y los devuelve
-    let heroSpeed = Math.floor(this.heroe.stats.agility / 4)  + this.speedByClass();
+    let heroSpeed = Math.floor(this.heroe._agi / 4)  + this.speedByClass();
     let icHeroe = 0;
     let c = 0
     do{
@@ -73,14 +73,23 @@ turnos : number [];
           this.enemy[i].IC -= 100;
         };
       }
-    }while(c < 100)
+    }while(this.turnos.length < 20)
   }
 
   turno(){
+    this.heroe = new Heroe(1, 'pepe', clases.warrior, 120, 40, 1, 0, estados.good,
+    12, 10, 8, 4, 6)
+    this.heroe.preLlenado()
+    let enemy1 : Enemy = new Enemy()
+    let enemy2 : Enemy = new Enemy()
+    enemy1.preLlenado();
+    enemy2.preLlenado();
+    this.enemy.push(enemy1) 
+    this.enemy.push(enemy2)
     this.turnOrder();
     for (let t of this.turnos){
       if(t == 7){
-        console.log('hero ataca');
+        console.log('El hero ' + this.heroe.name + ' ataca');
       }
       else{
         console.log(this.enemy[t].name + ' a atacado al heroe')
@@ -97,4 +106,25 @@ turnos : number [];
       , 1000
     )
   }*/
-}
+
+
+
+/*
+    id : 1,
+    name : 'pedro',
+    class : clases.warrior,
+    hp : 120,
+    mp : 40,
+    experience : 0,
+    level : 2,
+    stats : {
+      strength : 10,
+      vitality : 10,
+      dextery : 6,
+      agility : 8,
+      magic : 4
+    }*/
+    
+
+  }
+
