@@ -1,21 +1,25 @@
 //classes
 export class item {
+    constructor(){}
     id : number;
     name : string;
     description : string;
     rarity : itemRarity;
     imgURL : string; 
     value : number;         //cuanto vale el item  
+   
 }
 export class potion extends item {
     power : number;       //indica cuanto afecta
     type : potionType;
+ 
 }
 
 export class weapon extends item{
     power : number;
     upgradeLvl : number = 0;        //mejora
     type : weaponType;
+ 
     
 }
 export class armor extends item {

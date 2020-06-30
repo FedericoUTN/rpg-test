@@ -1,0 +1,42 @@
+<div class="container">
+
+    <div class="row" style="border: lightslategray;">
+        <div class="col-md-4">
+            <h2>Mochila</h2>
+            <tr></tr>
+            <p style="color: darkgreen;">Dinero: {{currentMoney}}</p>
+            <tr></tr>
+            <ul>
+
+                <li *ngFor="let i of items; let x = index">
+                    <div>{{i.name}} / valor : {{i.value}}<button (click)="vender(i.id)">vender</button></div>
+                </li>
+
+            </ul>
+
+
+        </div>
+        <div class="col-md-4">
+            <h2>Caracteristicas</h2>
+            <tr></tr>
+            <div>Heroe: {{Hero.name}}</div>
+            <div>Nivel : {{Hero.level}}</div>
+            <div>Experiencia : {{Hero.experience}} / {{Hero.expRequerida}}</div>
+
+        </div>
+        <div class="col-md-4">
+            <h2>Misiones</h2>
+            <tr></tr>
+
+
+        </div>
+
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+</div>

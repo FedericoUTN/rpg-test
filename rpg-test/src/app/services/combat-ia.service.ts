@@ -15,7 +15,11 @@ setArmor : item;
 setWeapon : item;
 turnos : number [] = [];
 
-  constructor() { }
+  constructor() {
+    this.heroe = new Heroe(1, 'pepe', clases.warrior, 120, 40, 1, 0, estados.good,
+    12, 10, 8, 4, 6)
+    this.heroe.preLlenado()
+   }
   damageToEnemy(pow : number, malo : Enemy):number{
     return (malo.armor - pow);
   }
@@ -77,8 +81,8 @@ turnos : number [] = [];
   }
 
   turno(){
-    this.heroe = new Heroe(1, 'pepe', clases.warrior, 120, 40, 1, 0, estados.good,
-    12, 10, 8, 4, 6)
+    /*this.heroe = new Heroe(1, 'pepe', clases.warrior, 120, 40, 1, 0, estados.good,
+    12, 10, 8, 4, 6)*/
     this.heroe.preLlenado()
     let enemy1 : Enemy = new Enemy()
     let enemy2 : Enemy = new Enemy()

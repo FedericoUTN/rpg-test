@@ -21,7 +21,9 @@ export class Heroe {
     };
     private expReq : number;
     private skillSlot : number;
-
+    get expRequerida (){
+        return this.expReq
+    }
      
             //cuanto slots de skills tiene disponible
 

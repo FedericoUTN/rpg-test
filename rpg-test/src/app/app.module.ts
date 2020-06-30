@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ActionMenuComponent } from './action-menu/action-menu.component';
 import { WorldComponent } from './world/world.component';
 import { CombatComponent } from './combat/combat.component';
+import { InventoryComponent } from './inventory/inventory.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CombatComponent } from './combat/combat.component';
     FooterComponent,
     ActionMenuComponent,
     WorldComponent,
-    CombatComponent
+    CombatComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,
