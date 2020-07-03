@@ -43,6 +43,7 @@ export class Heroe {
     subirLvl(){
         if(this.experience >= this.calcExpReq(this.level)){
             this.level += 1;
+            this.expReq = this.calcExpReq(this.level)
         }
     }
     

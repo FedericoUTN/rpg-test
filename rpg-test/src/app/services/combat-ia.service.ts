@@ -100,6 +100,14 @@ turnos : number [] = [];
       }  
     }
   }
+
+  /* 
+    LUEGO DEL COMBATE
+  */
+  obtenerExperiencia(exp : number){
+    this.heroe.experience += exp
+    this.heroe.subirLvl() //sube si cumple, si no, no
+}
     
     /*setTimeout(
       function(){this.damageToEnemy(5, this.enemy[0])}

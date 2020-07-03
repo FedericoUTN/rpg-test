@@ -27,6 +27,11 @@
         <div class="col-md-4">
             <h2>Misiones</h2>
             <tr></tr>
+            <div>
+                <ul>
+                    <li *ngFor="let quest of Quests"> {{quest.titulo}}({{quest.lvlDifficult}}) <button (click)='completarQuestTest()'>Completar</button></li>
+                </ul>
+            </div>
 
 
         </div>

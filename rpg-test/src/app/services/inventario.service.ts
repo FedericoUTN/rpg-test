@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { item, potion, itemRarity, potionType, weapon, weaponType } from 'src/app/classes/item';
+import { item, potion, itemRarity, potionType, weapon, weaponType, armor, questItem } from 'src/app/classes/item';
 import { Heroe } from 'src/app/classes/heroe';
-import { quest } from 'src/app/classes/quest';
+import { Quest } from 'src/app/classes/quest';
 
 
 @Injectable({
@@ -9,10 +9,10 @@ import { quest } from 'src/app/classes/quest';
 })
 export class InventarioService {
   money : number = 0;
-  equipo : item[] = [];          //objetos en el inventario
+  equipo : (item | potion | weapon | armor | questItem)  [] = [];          //objetos en el inventario
   maxCap : number = 15;     //capacidad maximma de items en el inventario
   heroeActual : Heroe;
-  misiones : quest[];       //misiones obtenidas 
+  misiones : Quest[];       //misiones obtenidas 
   //division del inventario
 
    pocionHP : potion = {
@@ -40,9 +40,25 @@ espada : weapon = {
   type : weaponType.sword
   
 }
+
+cabeza_kobol : questItem = {
+  id : 301,
+  name : 'Cabeza de Kobol',
+  description : 'Objeto de mision',
+  rarity : itemRarity.raro,
+  imgURL : '',
+  value : 1,
+  questId : 1
+
+}
+getKbol(){
+  return this.cabeza_kobol
+}
+
   constructor() {
     this.agregarEquipo(this.pocionHP)
     this.agregarEquipo(this.espada)
+    this.equipo.push(this.cabeza_kobol)
     
     
    }
@@ -63,4 +79,5 @@ espada : weapon = {
       this.money += this.equipo[index].value
       this.equipo.splice(index, 1);
        }
+       
 }
